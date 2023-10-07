@@ -1,100 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Interactive Eclipse Simulator</title>
-<style>
-body {
-  font-family: sans-serif;
-}
-
-#canvas {
-  width: 500px;
-  height: 500px;
-}
-
-.info-panel {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  border: 1px solid black;
-  padding: 10px;
-}
-</style>
-</head>
-<body>
-<canvas id="canvas"></canvas>
-
-<div class="info-panel">
-  <h2>Eclipse Information</h2>
-  <p>An eclipse occurs when one celestial body passes in front of another, blocking its light from reaching Earth.</p>
-  <p>There are two main types of eclipses: solar eclipses and lunar eclipses.</p>
-  <p>Solar eclipses occur when the Moon passes in front of the Sun.</p>
-  <p>Lunar eclipses occur when the Earth passes between the Sun and the Moon.</p>
-</div>
-
-<script>
-// Create a canvas element to draw the eclipse on.
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-
-// Define the positions of the Sun, Moon, and Earth.
-var sun = {
-  x: 250,
-  y: 250,
-  radius: 50
-};
-
-var moon = {
-  x: 100,
-  y: 100,
-  radius: 25
-};
-
-var earth = {
-  x: 400,
-  y: 400,
-  radius: 75
-};
-
-// Draw the Sun, Moon, and Earth on the canvas.
-ctx.fillStyle = "yellow";
-ctx.beginPath();
-ctx.arc(sun.x, sun.y, sun.radius, 0, 2 * Math.PI);
-ctx.fill();
-
-ctx.fillStyle = "white";
-ctx.beginPath();
-ctx.arc(moon.x, moon.y, moon.radius, 0, 2 * Math.PI);
-ctx.fill();
-
-ctx.fillStyle = "blue";
-ctx.beginPath();
-ctx.arc(earth.x, earth.y, earth.radius, 0, 2 * Math.PI);
-ctx.fill();
-
-// Calculate the distance between the Sun and the Moon.
-var distanceBetweenSunAndMoon = Math.sqrt(Math.pow(sun.x - moon.x, 2) + Math.pow(sun.y - moon.y, 2));
-
-// If the distance between the Sun and the Moon is less than the sum of their radii, then there is a solar eclipse.
-if (distanceBetweenSunAndMoon < sun.radius + moon.radius) {
-  // Draw a black circle over the Sun to represent the solar eclipse.
-  ctx.fillStyle = "black";
-  ctx.beginPath();
-  ctx.arc(sun.x, sun.y, sun.radius, 0, 2 * Math.PI);
-  ctx.fill();
-}
-
-// If the distance between the Earth and the Moon is less than the sum of their radii, then there is a lunar eclipse.
-if (distanceBetweenSunAndMoon < earth.radius + moon.radius) {
-  // Draw a black circle over the Moon to represent the lunar eclipse.
-  ctx.fillStyle = "black";
-  ctx.beginPath();
-  ctx.arc(moon.x, moon.y, moon.radius, 0, 2 * Math.PI);
-  ctx.fill();
-}
-</script>
-</body>
+	<head lang="en">
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+		<script src="/main.js" ></script>
+	</body>
 </html>
